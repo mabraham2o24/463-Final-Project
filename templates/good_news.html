@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good News</title>
+</head>
+<body style="font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0;">
+
+    <div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
+        <h1 style="color: #007BFF; text-align: center;">Random Good News Article</h1>
+        <div>
+            <h2 style="color: #007BFF;">{{ articles[0]['title'] }}</h2>
+            <p style="line-height: 1.6;">{{ articles[0]['content']|safe }}</p>
+            <p style="color: #666;"><em>Source: {{ articles[0]['source'] }}</em></p>
+            <!-- Include the link here -->
+            <p style="color: #007BFF;"><a href="{{ articles[0]['url'] }}" target="_blank" style="text-decoration: none;">Read more</a></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
