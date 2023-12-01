@@ -14,8 +14,11 @@
 9|eagles17|superbowl
 """
 
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask import session
+from datetime import datetime
 import random
 
 app = Flask(__name__)
@@ -31,6 +34,17 @@ c.execute('''
               password TEXT NOT NULL
           )
           ''')
+# Create 'user_entries' table to store journal entries
+c.execute('''
+          CREATE TABLE IF NOT EXISTS user_entries (
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+              user_id INTEGER NOT NULL,
+              journal_content TEXT,
+              timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+              FOREIGN KEY(user_id) REFERENCES users(id)
+          )
+          ''')
+
 conn.commit()
 conn.close()
 
@@ -110,11 +124,36 @@ def register():
 def stressometer():
     return render_template('stressometer.html')
 
-@app.route('/journaling')
-def journaling():
-    return render_template('journaling.html')
+@app.route('/journaling/<username>')
+def journaling(username):
+    conn = sqlite3.connect('users.db')
+    c = conn.cursor()
+    
+    # Fetch journal entries along with timestamps for the current user
+    c.execute('SELECT journal_content, timestamp FROM user_entries WHERE user_id = (SELECT id FROM users WHERE username = ?)', (username,))
+    entries = c.fetchall()
 
-@app.route('/good-news', methods=['GET', 'POST'])
+    conn.close()
+    
+    return render_template('journaling.html', username=username, entries=entries)
+
+@app.route('/save_journal', methods=['POST'])
+def save_journal():
+    if request.method == 'POST':
+        journal_content = request.form['journal_content']
+        username = request.form['username']
+        
+        # Get current timestamp
+        current_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        
+        conn = sqlite3.connect('users.db')
+        c = conn.cursor()
+        c.execute('INSERT INTO user_entries (user_id, journal_content, timestamp) VALUES ((SELECT id FROM users WHERE username = ?), ?, ?)', (username, journal_content, current_time))
+        conn.commit()
+        conn.close()
+
+        return redirect(url_for('journaling', username=username))
+@app.route('/good_news', methods=['GET', 'POST'])
 def good_news():
     if request.method == 'POST':
         category = request.form.get('category', 'animals')  # Default to 'animals' if no category is selected

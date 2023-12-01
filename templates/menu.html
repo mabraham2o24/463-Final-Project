@@ -54,8 +54,8 @@
     <h1>Welcome, {{ username }}!</h1>
     <ul>
         <li><a href="{{ url_for('stressometer') }}">Option 1: Stressometer</a></li>
-        <li><a href="{{ url_for('journaling') }}">Option 2: Journaling</a></li>
-        <li><a href="{{ url_for('good_news') }}">Option 3: Good News</a></li>
+        <li><a href="{{ url_for('journaling', username=username) }}">Option 2: Journaling</a></li>
+        <li><a href="{{ url_for('good_news', category='animals') }}">Option 3: Good News</a></li>
     </ul>
 </body>
 </html>

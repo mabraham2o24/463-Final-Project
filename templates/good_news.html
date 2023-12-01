@@ -67,7 +67,7 @@
 </head>
 <body>
     <h1>Good News</h1>
-    <form action="/good-news" method="post">
+    <form action="/good_news" method="post">
         <label for="category">Choose Article Type:</label>
         <select id="category" name="category">
             <option value="animals">Animals</option>
@@ -76,7 +76,7 @@
             <option value="laughs">Laughs</option>
         </select>
         <input type="submit" value="Generate Article">
-    </form>
+    </form>    
 
     {% for article in articles %}
         <div class="article">

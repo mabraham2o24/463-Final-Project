@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journaling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #fb736a, #e84a94, #4252df, rgb(23, 205, 117));
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: textShadowAnim 3s ease infinite alternate;
+        }
+
+        @keyframes textShadowAnim {
+            0% {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            100% {
+                text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        form {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            background-color: rgba(255, 255, 255, 0.8);
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        textarea {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 2px solid #ff6f61;
+            resize: vertical;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e0483b;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px dashed #ccc;
+            margin: 20px auto;
+            width: 80%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        li:hover {
+            transform: scale(1.05);
+        }
+
+        /* Updated styles for emoji selector and text area */
+        .emoji-selector {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .emoji-selector button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            padding: 0;
+            margin: 0;
+            font-size: 60px; /* Adjust the font size for larger emojis */
+        }
+
+        .emoji-selector button:focus {
+            outline: none;
+        }
+
+        .emoji-selector button:hover {
+            transform: scale(1.2);
+        }
+
+        #journal-content {
+            width: calc(100% - 40px);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 2px solid #ff6f61;
+            resize: vertical;
+            font-size: 18px;
+            position: relative;
+        }
+
+        .selected-emoji {
+            position: absolute;
+            top: 250px;
+            right: 400px;
+            font-size: 150px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Journaling</h1>
+    <!-- Emoji selector -->
+    <div class="emoji-selector">
+        <button onclick="insertEmoji('😊')">😊</button>
+        <button onclick="insertEmoji('😄')">😄</button>
+        <button onclick="insertEmoji('😔')">😔</button>
+        <button onclick="insertEmoji('😍')">😍</button>
+        <button onclick="insertEmoji('🥰')">🥰</button>
+        <button onclick="insertEmoji('😎')">😎</button>
+        <button onclick="insertEmoji('🤗')">🤗</button>
+        <!-- Add more emojis as needed -->
+    </div>
+
+    <form action="{{ url_for('save_journal') }}" method="POST">
+        <div class="selected-emoji" id="selected-emoji"></div>
+        <textarea name="journal_content" id="journal-content" cols="30" rows="8" placeholder="Write your journal entry here"></textarea>
+        <input type="hidden" name="username" value="{{ username }}">
+        <br>
+        <button type="submit">Save</button>
+    </form>
+
+    <hr>
+    
+    <h2>Past Entries:</h2>
+    <ul>
+        {% for entry in entries %}
+            <li>{{ entry[0] }} - {{ entry[1] }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Script for inserting emoji into textarea and displaying selected emoji -->
+    <script>
+        function insertEmoji(emoji) {
+            const textarea = document.getElementById('journal-content');
+            const cursorPos = textarea.selectionStart;
+            const textBefore = textarea.value.substring(0, cursorPos);
+            const textAfter = textarea.value.substring(cursorPos);
+            textarea.value = textBefore + emoji + textAfter;
+            document.getElementById('selected-emoji').innerText = emoji;
+        }
+    </script>
+</body>
+</html>
