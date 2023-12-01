@@ -4,22 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Good News</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #007BFF;
+            margin-bottom: 20px;
+            font-size: 36px; /* Adjust the font size as needed */
+        }
+
+        .article {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007BFF;
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .author {
+            color: #6C757D;
+        }
+
+        .source {
+            color: #6C757D;
+        }
+
+        .read-more {
+            display: block;
+            color: #007BFF;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        select {
+            padding: 8px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body style="font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; margin: 0; padding: 0;">
+<body>
+    <h1>Good News</h1>
+    <form action="/good-news" method="post">
+        <label for="category">Choose Article Type:</label>
+        <select id="category" name="category">
+            <option value="animals">Animals</option>
+            <option value="nature">Nature</option>
+            <option value="inspiring">Inspiring</option>
+            <option value="laughs">Laughs</option>
+        </select>
+        <input type="submit" value="Generate Article">
+    </form>
 
-    <div style="max-width: 600px; margin: 20px auto; padding: 20px; background-color: #fff; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 10px;">
-        <h1 style="color: #007BFF; text-align: center;">Random Good News Article</h1>
-        <div>
-            <h2 style="color: #007BFF;">{{ articles[0]['title'] }}</h2>
-            <p style="line-height: 1.6;">{{ articles[0]['content']|safe }}</p>
-            <p style="color: #666;"><em>Source: {{ articles[0]['source'] }}</em></p>
-            <!-- Include the link here -->
-            <p style="color: #007BFF;"><a href="{{ articles[0]['url'] }}" target="_blank" style="text-decoration: none;">Read more</a></p>
+    {% for article in articles %}
+        <div class="article">
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.content }}</p>
+            {% if article.author %}
+                <p class="author">Author: {{ article.author }}</p>
+            {% endif %}
+            <p class="source">Source: {{ article.source }}</p>
+            <a class="read-more" href="{{ article.url }}" target="_blank">Read More</a>
         </div>
-    </div>
-
+    {% endfor %}
 </body>
 </html>
 
+
+  
 
 
