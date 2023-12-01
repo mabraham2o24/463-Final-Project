@@ -93,6 +93,62 @@ def get_random_good_news(category):
     # Randomly select an article from the specified category
     return random.choice(good_news_articles.get(category, []))
 
+# Update the calculate_overall_mood function in app.py
+
+def calculate_overall_mood(answers):
+    # Calculate the overall mood based on answers
+    total_score = sum(answers)
+    num_questions = len(answers)
+    average_score = total_score / num_questions
+
+    # Categorize overall mood based on average score and assign emojis
+    if average_score <= 2:
+        mood_category = "Very Sad"
+        mood_emoji = "😞"
+    elif 2 < average_score <= 3:
+        mood_category = "Sad"
+        mood_emoji = "😟"
+    elif 3 < average_score <= 4:
+        mood_category = "Neutral"
+        mood_emoji = "😐"
+    elif 4 < average_score <= 5:
+        mood_category = "Happy"
+        mood_emoji = "😊"
+
+    return mood_category, mood_emoji
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+def categorize_mood(score):
+    if score < 10:
+        return "Very Sad"
+    elif 10 <= score < 20:
+        return "Sad"
+    elif 20 <= score < 30:
+        return "Neutral"
+    elif 30 <= score < 40:
+        return "Happy"
+    
+
+def get_advice(category):
+    if category == "Very Sad":
+        return "Consider talking to a friend or seeking professional help."
+    elif category == "Sad":
+        return "Take a break, listen to music, or engage in activities you enjoy."
+    elif category == "Neutral":
+        return "Find time for self-reflection and relaxation."
+    elif category == "Happy":
+        return "Keep doing what you're doing! Consider sharing your positivity with others."
+    else:
+        return "You're doing great! Keep up the positive vibes."
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -120,9 +176,32 @@ def login():
 def register():
     return render_template('register.html')
 
-@app.route('/stressometer')
+# Modified /stressometer route to handle form submissions
+@app.route('/stressometer', methods=['GET', 'POST'])
 def stressometer():
+    if request.method == 'POST':
+        # Extracting scores from the form
+        scores = [int(request.form[f'q{i}']) for i in range(1, 10)]
+
+        # Sorting the scores using quicksort
+        sorted_scores = quicksort(scores)
+
+        # Summing the top 5 scores
+        total_score = sum(sorted_scores[-5:])
+
+        # Categorizing the overall mood
+        mood_category = categorize_mood(total_score)
+
+        # Calculating mood category and emoji
+        mood_category, mood_emoji = calculate_overall_mood(scores)
+
+        # Getting advice based on the mood category
+        advice = get_advice(mood_category)
+
+        return render_template('stressometer_result.html', mood_category=mood_category, mood_emoji=mood_emoji, advice=advice)
+
     return render_template('stressometer.html')
+
 
 @app.route('/journaling/<username>')
 def journaling(username):

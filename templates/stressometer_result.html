@@ -1,0 +1,38 @@
+<!-- Update the stressometer_result.html file -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stressometer Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            color: #495057;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #007BFF;
+            font-size: 36px; /* Adjust the font size as needed */
+        }
+
+        p {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Stressometer Results</h1>
+    <p>Your overall mood category: {{ mood_category }} {{ mood_emoji }}</p>
+    <p>Advice: {{ advice }}</p>
+</body>
+</html>
