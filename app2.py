@@ -13,7 +13,7 @@
 8|rini98|Ron01
 9|eagles17|superbowl
 """
-
+#improting neccessary modules from Flask and other libraries
 from flask import Flask, render_template, request, redirect, url_for, flash
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -21,10 +21,11 @@ from flask import session
 from datetime import datetime
 import random
 
+#initialize flask app
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Set your own secret key
+app.secret_key = 'your_secret_key'  # secret key
 
-# Create a SQLite database
+# Create a SQLite database to store user info
 conn = sqlite3.connect('users.db')
 c = conn.cursor()
 c.execute('''
@@ -93,8 +94,6 @@ def get_random_good_news(category):
     # Randomly select an article from the specified category
     return random.choice(good_news_articles.get(category, []))
 
-# Update the calculate_overall_mood function in app.py
-
 def calculate_overall_mood(answers):
     # Calculate the overall mood based on answers
     total_score = sum(answers)
@@ -117,6 +116,7 @@ def calculate_overall_mood(answers):
 
     return mood_category, mood_emoji
 
+#sorts the scores which is used to get the results and advice
 def quicksort(arr):
     if len(arr) <= 1:
         return arr
@@ -126,6 +126,7 @@ def quicksort(arr):
     right = [x for x in arr if x > pivot]
     return quicksort(left) + middle + quicksort(right)
 
+#categorize mood based on the score(range)
 def categorize_mood(score):
     if score < 10:
         return "Very Sad"
@@ -136,7 +137,7 @@ def categorize_mood(score):
     elif 30 <= score < 40:
         return "Happy"
     
-
+#function that generates advice based on the users mood
 def get_advice(category):
     if category == "Very Sad":
         return "Consider talking to a friend or seeking professional help. Do not bottle up your feelings. Getting it out in the open can help you get a lot of weight off your shoulders. Talk to a therapist or if you do not feel comfortable with that talk to a friend. Do not give up and keep on trying."
@@ -149,27 +150,29 @@ def get_advice(category):
     else:
         return "You're doing great! Keep up the positive vibes." 
 
+#route for the home page
 @app.route('/')
 def home():
     return render_template('index.html')
 
+#route for the login
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form['username']
     password = request.form['password']
 
-    conn = sqlite3.connect('users.db')
+    conn = sqlite3.connect('users.db') #database that stores the user login info
     c = conn.cursor()
 
-    c.execute('SELECT * FROM users WHERE username=? AND password=?', (username, password))
+    c.execute('SELECT * FROM users WHERE username=? AND password=?', (username, password)) #access the database
     user = c.fetchone()
 
     conn.close()
 
     if user:
-        return render_template('menu.html', username=username)
+        return render_template('menu.html', username=username) #going to the menu page if the login information is correct
     else:
-        flash('Incorrect username or password', 'error')
+        flash('Incorrect username or password', 'error') #error message for wrong username/password
         return redirect(url_for('home'))
 
 @app.route('/register')
@@ -216,6 +219,7 @@ def journaling(username):
     
     return render_template('journaling.html', username=username, entries=entries)
 
+#route for saving the journal entry
 @app.route('/save_journal', methods=['POST'])
 def save_journal():
     if request.method == 'POST':
@@ -232,6 +236,7 @@ def save_journal():
         conn.close()
 
         return redirect(url_for('journaling', username=username))
+#route for good news
 @app.route('/good_news', methods=['GET', 'POST'])
 def good_news():
     if request.method == 'POST':
@@ -257,7 +262,7 @@ def signup():
 
     conn.close()
 
-    flash(f'Account created for {username}', 'success')
+    flash(f'Account created for {username}', 'success') #flashing message when the user has created an account succesfully
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
