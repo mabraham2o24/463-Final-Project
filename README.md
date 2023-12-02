@@ -12,8 +12,71 @@
 # ***Installation and Instruction to Use (5%)***
 + Open up our repository on github.
   + link: https://github.com/mabraham2o24/463-Final-Project.git
-+ Once you are in our repository, click the 'period' key on your keyboard which will open up github codespaces.
-+ 
++ Once you are in our repository, click the 'period' key on your keyboard which will open up github codespaces. It will look something like this:
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/444d3325-8c58-413c-ae35-711de12c4b41)
++ Once codespace is opened, click on the 3 lines at the top left corner above the little file sign. It looks like this:
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/ebb939c0-3db8-41df-aa0e-248e10bd2473)
++ You will see an option called 'Terminal'. Hover over it and you will see an option called 'New Terminal'. Click on that to open a new terminal.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/d43df8bd-96ae-4d35-9bf2-f089d65e973b)
++ Once you click on 'New Terminal', a terminal will pop up and you will be prompted to choose where you want to continue working, Github Codespaces or a New Local Clone. Choose Github Codespaces.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/db292e30-d3b3-4b47-8331-94a9e9118503)
++ Once you choose github codespaces, you will be prompted to choose the instance type for your code space - 2 Cores, 8GB RAM, 32 GB storage or 4 Cores, 16 GB RAMS, 32 GB storage. You can choose either one depending on your preference and how much space you want it to use. 
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/871a3ee7-5591-4254-bc4d-1ad58fbdf281)
++ Once you choose either 2 Cores or 4 Cores, a new tab will open up and this will be your codespace.
++ Once the codespace loads, the terminal you are going to run the application is will open up.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5dcf03cf-9780-424a-92c1-84ab87090960)
++ Now that you have a terminal open, run the command 'pip install flask'. We need this to run our website.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/486fbad4-c850-42b4-bbc8-71600b905df3)
++ Once flask has been installed, the command line prompt will pop up again where you are going to run the command to launch the application.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/22fb7b7b-874e-446d-b9fa-9a7fd3c681f4).
++ Now you will run the command 'python app2.py'which will run our application.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/45a705db-59e6-4966-a308-9e2931200607)
++ There are two ways to open up the website:
+  + First way:
+    + You can hover your mouse over the url link given in the command prompt. When you hover over it, a little screen will pop up saying 'Follow Link'. Click on that and the website will opened in a new tab of your web browser.
+    ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/704bc463-0383-4d6c-af3f-d4b57925ce1d)
+    ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/c10d8663-cfc5-4d36-a12f-f02fded9c403)
+  + Second Way:
+    + Once you run the command, a little window will pop up in the bottom right corner that says 'Open Web Browser'. Click on that and that will launch the website on a new tab of your web browser.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/955f38d2-7a1f-4fd0-9b92-04296514d2b1)
++ Once you have launched the website, you will see a login page. If you already have an account, login with your username and password. If this is your first time using the website, click on 'Don't have an account, Register here.'
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5bd1c389-034e-4370-b904-be8292682b9c)
++ You will then go to a 'Register' screen. Choose a username and password and hit 'Register'.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/6faa5906-8785-4b5d-a376-2fe17b17bc68).
++ Once you have created an account, you will see a little message that says "Account Created For..." and will end up back on the login page.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/7166798b-951e-45f8-8038-220396ded73e)
++ Log into your new account and you will see a menu.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/8df16d07-76dd-4486-ad0d-ebb55850835b)
++ You can choose any three options. The instructions for each menu option is as follows:
+  + Option 1: Stressometer
+    + Click the first option called 'Stressometer'. Once you open up this option, you will be prompted to fill out a questionaire.
+    + There are 9 questions and you rate your answer from a scale 1 to 5. For instance, the first question asks about how emotionally balanced you feel right now. Your answer will be somewhere on a scale from 1 to 5. Each question has a drop down menu where you choose your rating.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/ccfe0c5b-7263-43b3-a202-38211f0150a3)
+    + Answer each question and when you are done click 'Submit'.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/c600e8a5-0c02-4682-86b3-e0f1e3cb8e96)
+    + Once you hit submit, you will get your results based on your ratings. You will also get some advice based on whatever your results is.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/c5cb89fc-6cf6-469a-84d4-443f048e46be)
+      
+  + Option 2: Journaling
+    + Click on the option 2 for journaling. This is where you can write down thoughts or whatever you want.
+    ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/2cef2cbe-87d4-44a5-a20d-2308447b2f11)
+    + Type in whatever you want and click save.
+    ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5a23f310-d087-4f20-b56f-cfdcc16591e6)
+    + Once you hit 'Save', you entry will appear at the bottom. So, whenever you login you will be able to see all of your past entires.
+    ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/0782b40a-0050-4c1d-ab4b-fccc1ee6a099)
+
+  + Option 3: Good News
+    + Click on the option 3 for Good News.
+    + This will take you to a page labeled 'Good News" where you can pick a category and generate a random good news article.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/bcf78fdf-becc-45f8-803a-d688f4cb12fe)
+    + Choose an article type by clicking on the drop down menu and choosing one of the categories.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/b4f983b9-b40f-4196-bcfe-f770169fb1f2)
+    + Once you choose a category, click Generate Article.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/f23764b0-384a-4928-b4f0-35c2e8658659)
+
+    + This will generate a random article that you can read. Once an article is generated, you will be provided with the article title, source, and a read more option. Click the 'read more' option to go to the article.
+      ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/07a751f5-a540-42d2-83eb-78a62d51ea02)
+    + This will open up the article in a new tab of the web browser you are in and you can read the article. 
 
 # ***Structure of the Code (10%)***
 + start here
