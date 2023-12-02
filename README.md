@@ -79,7 +79,13 @@
     + This will open up the article in a new tab of the web browser you are in and you can read the article. 
 
 # ***Structure of the Code (10%)***
-+ start here
+This diagram is for our app2.py:
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/cc92d98d-aa93-4a30-a2d0-0d6faa258581)
+
+This diagram is for our migrate_passwords.py:
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/89db9746-68ce-4275-8c3e-6f198d623ff7)
+
+
 
 # ***Functionalities and Test Results (10%)***
 + start here
