@@ -10,6 +10,7 @@
 + We wanted to develop this application as a try towards having a resource that people can use for their emotional/mental benefit. Life can be very stressful or many things can happen in life that can bring down a person's mood. There are a lot of resources out there that people can use but we wanted to create an application that combines three good resources out there for support; a stressometer, journaling, and good news. Stressometer is a great way for someone to express how they are feeling without having to write much. Sometimes it can be hard to write down our thoughts so this helps people to just rate how they are feeling and based on that get some advice back. Sometimes being told the simplest advice can help people deal with their problems. The journaling feature can help people write down their thoughts and nobody but them will be able to see it and once they log back in they can re-visit their entries and use that as a way to see how far they have come. Last but not least our good new generator is a simple way to bring some joy into someone's life. Just reading about some of the good in the world or reading cute stories about animals can help people take their minds off of things.
 
 # ***Installation and Instruction to Use (5%)***
+## Installation
 + Open up our repository on github.
   + link: https://github.com/mabraham2o24/463-Final-Project.git
 + Once you are in our repository, click the 'period' key on your keyboard which will open up github codespaces. It will look something like this:
@@ -31,6 +32,8 @@
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/22fb7b7b-874e-446d-b9fa-9a7fd3c681f4).
 + Now you will run the command 'python app2.py'which will run our application.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/45a705db-59e6-4966-a308-9e2931200607)
+----------------------------------------------------------------------------------------------------------------------------------
+## Instruction to Use
 + There are two ways to open up the website:
   + First way:
     + You can hover your mouse over the url link given in the command prompt. When you hover over it, a little screen will pop up saying 'Follow Link'. Click on that and the website will opened in a new tab of your web browser.
@@ -56,6 +59,7 @@
     + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/c600e8a5-0c02-4682-86b3-e0f1e3cb8e96)
     + Once you hit submit, you will get your results based on your ratings. You will also get some advice based on whatever your results is.
       ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/c5cb89fc-6cf6-469a-84d4-443f048e46be)
+    ---------------------------------------------------------------------------------------------------------------------------------------
       
   + Option 2: Journaling
     + Click on the option 2 for journaling. This is where you can write down thoughts or whatever you want.
@@ -64,6 +68,7 @@
     + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5a23f310-d087-4f20-b56f-cfdcc16591e6)
     + Once you hit 'Save', you entry will appear at the bottom. So, whenever you login you will be able to see all of your past entires.
     ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/0782b40a-0050-4c1d-ab4b-fccc1ee6a099)
+--------------------------------------------------------------------------------------------------------------------------------------
 
   + Option 3: Good News
     + Click on the option 3 for Good News.
@@ -78,6 +83,7 @@
       ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/07a751f5-a540-42d2-83eb-78a62d51ea02)
     + This will open up the article in a new tab of the web browser you are in and you can read the article. 
 
+-----------------------------------------------------------------------------------------------------------
 # ***Structure of the Code (10%)***
 This diagram is for our app2.py:
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/cc92d98d-aa93-4a30-a2d0-0d6faa258581)
@@ -85,10 +91,35 @@ This diagram is for our app2.py:
 This diagram is for our migrate_passwords.py:
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/89db9746-68ce-4275-8c3e-6f198d623ff7)
 
-
+-------------------------------------------------------------------------------------------------------------------------
 
 # ***Functionalities and Test Results (10%)***
-+ start here
++ Function 1 - Create an Account
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/ca90db2b-692d-4170-b144-1077d09548ef)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/3f4cebb6-ab33-412b-a017-206648b56bd2)
+
++ Function 2 - Choosing a menu option
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/404cb9fc-372b-49a4-b35a-ed62e6fc0125)
+
++ Function 3 - Fill Out a Questionare and Get Back Mood Results and Advice
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/451510af-1975-4b7e-97ac-85a7868c0743)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/43657ddd-d3f6-415e-9c35-1d8097ed6695)
+
++ Function 4 - Can journal using our option 2 in the menu and can save your writings to visit back later.
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/32c603c1-e036-48ac-b76a-b89602df5c2b)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/ae1cdc93-c3b7-4f99-a5bd-7edec9f08b2d)
+
++ Function 5 - Generate Good News article choosing one of the catagories provided. Once you choose a category, hit generate article and then click read more which will open up a new tab with the article of your choosing.
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/16b0905d-a5a9-42d3-814d-fe1f1e2be7e6)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/edfe44aa-386a-41d6-bc32-1b53062fd4be)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/d0d13638-5e11-4fff-9eee-3378f0aa9155)
+
+## If you want to see a video demo of the application in use click the link below: 
+
+
+
+
+
 
 # ***Discussion and Conclusions (10%)***
 + start here
