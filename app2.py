@@ -139,15 +139,15 @@ def categorize_mood(score):
 
 def get_advice(category):
     if category == "Very Sad":
-        return "Consider talking to a friend or seeking professional help."
+        return "Consider talking to a friend or seeking professional help. Do not bottle up your feelings. Getting it out in the open can help you get a lot of weight off your shoulders. Talk to a therapist or if you do not feel comfortable with that talk to a friend. Do not give up and keep on trying."
     elif category == "Sad":
-        return "Take a break, listen to music, or engage in activities you enjoy."
+        return "Take a break, listen to music, or engage in activities you enjoy. Try to find something that can bring back some happiness into your life. You deserve to be happy, so do not stop trying to bring your spark back."
     elif category == "Neutral":
-        return "Find time for self-reflection and relaxation."
+        return "You are neither sad or happy. Try taking sometime to yourself and reflecting on this past week. Try to find something that made have made you happy or sad. Talk about it or write about it using our Journal."
     elif category == "Happy":
-        return "Keep doing what you're doing! Consider sharing your positivity with others."
+        return "We are glad you are happy and doing well. Keep doing what makes you happy and spread the positivity. Do not let anything bring you down and keep being you!"
     else:
-        return "You're doing great! Keep up the positive vibes."
+        return "You're doing great! Keep up the positive vibes." 
 
 @app.route('/')
 def home():
