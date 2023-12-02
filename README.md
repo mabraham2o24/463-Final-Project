@@ -114,12 +114,12 @@ This diagram is for our migrate_passwords.py:
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/edfe44aa-386a-41d6-bc32-1b53062fd4be)
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/d0d13638-5e11-4fff-9eee-3378f0aa9155)
 
-## If you want to see a video demo of the application in use click the link below: 
-
-
-
-
-
+## If you want to see a video demo of the application in use click the link below. Once you click on the title of the video, it will expand and you can play the video: 
+https://github.com/mabraham2o24/463-Final-Project/assets/143213640/1da470a1-08df-4ede-ab38-1558cede60a5
 
 # ***Discussion and Conclusions (10%)***
-+ start here
++ Our main project issue was coming together and combining all of our code. For the sake of time and not being to meet all the time we split up this project into parts. Treasure handled the journaling and saving all the information to the database for each user. While I, Mahima, dealt with the login system and good new generator. So, after we finished our individual parts when it came time to combining the codes we had some trouble due to compatibility issues and code errors. We had to spend a bit time on that to get it working together. We both worked together on the Stressometer which did not cause many issues.
++ Our biggest and really only limitation was time. We both had a lot of other work to do for other classes and was busy with personal stuff. Due to that we were not able to spend a lot of time on this project over break like we wanted to. If we had more time we would have added more features to improve our user interface and overall application. We wanted to add more menu options like a sleep tracker. We also wanted to make the good news generator use an API and randomly generate articles rather than hard coding them. Due to our time limit we were not able to implement some of the features we had in mind, but was able to execute the idea on a simple basis.
++ Our goal for this project was to implement one of the algorithms we learned in class. The algorithm that we chose and fit best into our application was quick sort algorithm. We used this for our stressometer option. The user has to fill out a questionaire ranking their emotions and other factors. Once the user submits it, the quick sort algorithm sorts the scores which are used to give the user their results and advice.
+![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/87e7f1e0-ba51-4b05-87a2-33020ccd9efa)
+
