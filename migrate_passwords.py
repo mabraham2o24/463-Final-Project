@@ -1,11 +1,13 @@
 import sqlite3
 
+#This function takes a dictionary password_mapping as input, where keys are user IDs, and values are the new plain-text passwords 
+# that need to be stored in the database.
 def migrate_passwords(password_mapping):
-    conn = sqlite3.connect('users.db')
-    c = conn.cursor()
+    conn = sqlite3.connect('users.db') #connecting to the database
+    c = conn.cursor() #creating SQLite queries
 
     for user_id, new_plain_text_password in password_mapping.items():
-        # Update the password in the database
+        # Update the password in the database to the actual password
         c.execute('UPDATE users SET password=? WHERE id=?', (new_plain_text_password, user_id))
 
     conn.commit()
