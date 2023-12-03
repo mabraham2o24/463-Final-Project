@@ -55,7 +55,7 @@
 + You will then go to a 'Register' screen. Choose a username and password and hit 'Register'.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/6faa5906-8785-4b5d-a376-2fe17b17bc68).
 + Once you have created an account, you will see a little message that says "Account Created For..." and will end up back on the login page.
-![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/7166798b-951e-45f8-8038-220396ded73e)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/7166798b-951e-45f8-8038-220396ded73e)
 + Log into your new account and you will see a menu.
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/8df16d07-76dd-4486-ad0d-ebb55850835b)
 + You can choose any three options. The instructions for each menu option is as follows:
