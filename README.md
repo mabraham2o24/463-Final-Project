@@ -1,4 +1,6 @@
 <h1 align="center">463 Final Project - MindfulMe</h1>
+<h1 align="center">Mahima Abraham and Treasure Davis</h1>
+
 
 # ***Goal of the Project (5%)***
 + The goal of this project was to create a web application that users can use for three different features that is displayed on a menu after they login to their account.:
