@@ -122,7 +122,7 @@ This diagram is for our migrate_passwords.py:
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/edfe44aa-386a-41d6-bc32-1b53062fd4be)
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/d0d13638-5e11-4fff-9eee-3378f0aa9155)
 
-## If you want to see a video demo of the application in use click the link below. Once you click on the title of the video, it will expand and you can play the video: 
+## If you want to see a video demo of the application in use(test results) click play below: 
 https://github.com/mabraham2o24/463-Final-Project/assets/143213640/1da470a1-08df-4ede-ab38-1558cede60a5
 
 # ***Discussion and Conclusions (10%)***
