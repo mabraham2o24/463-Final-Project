@@ -15,21 +15,29 @@
   + link: https://github.com/mabraham2o24/463-Final-Project.git
 + Once you are in our repository, click the 'period' key on your keyboard which will open up github codespaces. It will look something like this:
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/444d3325-8c58-413c-ae35-711de12c4b41)
+
 + Once codespace is opened, click on the 3 lines at the top left corner above the little file sign. It looks like this:
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/ebb939c0-3db8-41df-aa0e-248e10bd2473)
+
 + You will see an option called 'Terminal'. Hover over it and you will see an option called 'New Terminal'. Click on that to open a new terminal.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/d43df8bd-96ae-4d35-9bf2-f089d65e973b)
+
 + Once you click on 'New Terminal', a terminal will pop up and you will be prompted to choose where you want to continue working, Github Codespaces or a New Local Clone. Choose Github Codespaces.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/db292e30-d3b3-4b47-8331-94a9e9118503)
+
 + Once you choose github codespaces, you will be prompted to choose the instance type for your code space - 2 Cores, 8GB RAM, 32 GB storage or 4 Cores, 16 GB RAMS, 32 GB storage. You can choose either one depending on your preference and how much space you want it to use.
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/871a3ee7-5591-4254-bc4d-1ad58fbdf281)
+  
 + Once you choose either 2 Cores or 4 Cores, a new tab will open up and this will be your codespace.
 + Once the codespace loads, the terminal you are going to run the application is will open up.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5dcf03cf-9780-424a-92c1-84ab87090960)
+
 + Now that you have a terminal open, run the command 'pip install flask'. We need this to run our website.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/486fbad4-c850-42b4-bbc8-71600b905df3)
+
 + Once flask has been installed, the command line prompt will pop up again where you are going to run the command to launch the application.
 + ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/22fb7b7b-874e-446d-b9fa-9a7fd3c681f4).
+
 + Now you will run the command 'python app2.py'which will run our application.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/45a705db-59e6-4966-a308-9e2931200607)
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -43,7 +51,7 @@
     + Once you run the command, a little window will pop up in the bottom right corner that says 'Open Web Browser'. Click on that and that will launch the website on a new tab of your web browser.
       ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/955f38d2-7a1f-4fd0-9b92-04296514d2b1)
 + Once you have launched the website, you will see a login page. If you already have an account, login with your username and password. If this is your first time using the website, click on 'Don't have an account, Register here.'
-![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5bd1c389-034e-4370-b904-be8292682b9c)
++ ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/5bd1c389-034e-4370-b904-be8292682b9c)
 + You will then go to a 'Register' screen. Choose a username and password and hit 'Register'.
 ![image](https://github.com/mabraham2o24/463-Final-Project/assets/143213640/6faa5906-8785-4b5d-a376-2fe17b17bc68).
 + Once you have created an account, you will see a little message that says "Account Created For..." and will end up back on the login page.
